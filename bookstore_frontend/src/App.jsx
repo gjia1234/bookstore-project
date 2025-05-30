@@ -11,7 +11,7 @@ const App = () => {
       try {
         setLoading(true);
         // Replace the URL with your server's API endpoint
-        const response = await fetch('http://localhost:8000/GetBooks/');
+        const response = await fetch('http://127.0.0.1:8000/GetBooks/');
 
         // Check if the response is OK (status 200-299)
         if (!response.ok) {
