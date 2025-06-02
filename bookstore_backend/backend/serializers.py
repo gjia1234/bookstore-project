@@ -2,7 +2,7 @@ from backend.models import Books,Users
 from rest_framework import serializers
 
 class BookSerializer(serializers.Serializer):
-    ISBNNo = serializers.IntegerField()
+    ISBNNo = serializers.CharField()
     Title = serializers.CharField()
     Quantity = serializers.IntegerField()
     Price = serializers.FloatField()
@@ -17,7 +17,13 @@ class BookSerializer(serializers.Serializer):
         instance.ISBNNo = validated_data.get("ISBNNo",instance.ISBNNo)
         instance.save()
         return instance
-
+    
+    def validate_ISBNNo(self, value):
+        if not value.isdigit():
+            raise serializers.ValidationError("ISBN must contain digits only.")
+        if len(value) != 13:
+            raise serializers.ValidationError("ISBN must be exactly 13 digits.")
+        return value
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
