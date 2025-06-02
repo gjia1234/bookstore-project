@@ -13,8 +13,8 @@ class BookSerializer(serializers.Serializer):
     def update(self, instance, validated_data):
         instance.ISBNNo = validated_data.get("ISBNNo",instance.ISBNNo)
         instance.Title = validated_data.get("Title",instance.Title)
-        instance.Quantiy = validated_data.get("Quantity",instance.Quantity)
-        instance.ISBNNo = validated_data.get("ISBNNo",instance.ISBNNo)
+        instance.Quantity = validated_data.get("Quantity",instance.Quantity)
+        instance.Price = validated_data.get("Price",instance.Price)
         instance.save()
         return instance
     

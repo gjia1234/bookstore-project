@@ -33,7 +33,7 @@ def get_object(self, pk):
 @api_view(['PUT'])
 def UpdateBook(request,isbn):
     if request.method == "PUT":
-        book = get_object_or_404(Books,isbn)
+        book = get_object_or_404(Books, pk = isbn)
         serializer = BookSerializer(book, data=request.data)
         if serializer.is_valid():
             serializer.save()

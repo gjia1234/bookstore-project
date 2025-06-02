@@ -11,6 +11,7 @@ from rest_framework.urlpatterns import format_suffix_patterns
 urlpatterns = [
     path("GetBooks/",views.GetAllBooks),
     path("AddBook/",views.PostBook),
+    path("UpdateBook/<str:isbn>/",views.UpdateBook),
     path('admin/', admin.site.urls),
 ]
 
