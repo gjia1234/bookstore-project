@@ -12,6 +12,7 @@ urlpatterns = [
     path("GetBooks/",views.GetAllBooks),
     path("AddBook/",views.PostBook),
     path("UpdateBook/<str:isbn>/",views.UpdateBook),
+    path("DeleteBook/<str:isbn>/",views.DeleteBook),
     path('admin/', admin.site.urls),
 ]
 

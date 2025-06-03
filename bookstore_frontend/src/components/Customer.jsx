@@ -17,7 +17,7 @@ import {
 	TextField
 } from '@mui/material';
 
-function CustomerPage() {
+function Customer() {
 	const [books, setBooks] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState('');
@@ -156,4 +156,4 @@ function CustomerPage() {
 	);
 }
 
-export default CustomerPage;
+export default Customer;
